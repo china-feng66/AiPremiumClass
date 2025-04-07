@@ -9,4 +9,5 @@ print(model.predict("Which baking dish is best to bake a banana bread ?"))
 print(model.predict("Baking chicken in oven, but keeping it moist"))
 
 # 选做：Fake News数据集训练文本分类模型 
-# 课上看kaggle上代码实现
+# 请参照 kaggle 上实现 
+# https://www.kaggle.com/code/cliheng/fasttext-classification

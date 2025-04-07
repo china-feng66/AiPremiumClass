@@ -4,13 +4,16 @@ import numpy as np
 # 输入：comments = [['a','b','c'],['a','b','d'],['a','b','e']]
 # 其中bm25[0] = [0.0, 0.0, 0.0, 0.0, 0.0]表示第一个评论的bm25值
 # 其中bm25[0][0] = 0.0表示a的bm25值为0.0
-def bm25(comments, k=1.5, b=0.75):
+def bm25(comments, k=1.5, b=0.75, stop_words):
     # 计算文档总数
     N = len(comments)
     # 初始化文档长度列表和词频字典
     doc_lengths = []
     word_doc_freq = {}
     doc_term_dict = [{} for _ in range(N)]
+
+    sw = set(stop_words)
+    comments = [[word for word in cms if word not in sw] for cms in comments]
 
     for i, comment in enumerate(comments):
         # 记录文档长度

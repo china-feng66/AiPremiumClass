@@ -30,7 +30,7 @@ def comments_vectors_similarity(book_comms, method='bm25'):
         matrix = vectorizer.fit_transform([' '.join(comms) for comms in book_comms])
     if method == 'bm25':
         # 构建TF-IDF特征矩阵
-        matrix = bm25([' '.join(comms) for comms in book_comms])
+        matrix = bm25(book_comms)
    
     # 计算图书之间的余弦相似度
     similarity_matrix = cosine_similarity(matrix)
