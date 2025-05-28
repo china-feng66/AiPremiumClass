@@ -3,7 +3,8 @@ import jieba
 
 import numpy as np
 from rank_bm25 import BM25Okapi
- 
+
+from bm25_code import bm25
 def load_data(file_name,stop_words):
     #图书评论信息集合
     book_comments={} #{书名："评论1+评论+评论3+ 。。。"}
